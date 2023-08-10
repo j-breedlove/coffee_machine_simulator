@@ -1,7 +1,6 @@
 # Coffee Machine Simulator
-
+![coffee_machine.png](coffee_machine.png)
 This is a simple command-line Python program that simulates a coffee machine. The coffee machine offers three different types of coffee: espresso, latte, and cappuccino. Users can interact with the coffee machine to select a drink, insert coins, and receive their beverage. The program also includes a report feature to display the machine's current resources and earnings.
-
 ## Features
 
 - Select from three different coffee types:

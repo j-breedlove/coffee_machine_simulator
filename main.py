@@ -6,6 +6,7 @@ print(logo)
 
 def print_report(total):
     """Prints the current resources and money in the coffee machine."""
+    print("\nReport:\n")
     print(f"Water: {resources['water']}ml")
     print(f"Milk: {resources['milk']}ml")
     print(f"Coffee: {resources['coffee']}g")
@@ -24,10 +25,10 @@ def make_coffee(drink_name):
     for key, value in MENU[drink_name]["ingredients"].items():
         resources[key] -= value
         if resources[key] < 0:
-            print(f"Sorry there is not enough {key}.")
+            print(f"Sorry there is not enough {key}.\n")
             resources[key] += value
             return False
-    print(f"Here is your {drink_name} ☕️. Enjoy!")
+    print(f"Here is your {drink_name} ☕️. Enjoy!\n")
     return True
 
 
@@ -37,7 +38,7 @@ def coins_operate():
     Returns:
         float: Total value of inserted coins.
     """
-    print("Please insert coins.")
+    print("Please insert coins.\n")
     total = int(input("How many quarters?: ")) * 0.25
     total += int(input("How many dimes?: ")) * 0.10
     total += int(input("How many nickles?: ")) * 0.05
@@ -57,9 +58,9 @@ def process_drink_choice(drink_choice):
         if make_coffee(drink_choice):
             print(f"Here is ${money:.2f} in change.")
         else:
-            print("Sorry, we couldn't make your drink.")
+            print("Sorry, we couldn't make your drink.\n")
     else:
-        print("Sorry that's not enough money. Money refunded.")
+        print("Sorry that's not enough money. Money refunded.\n")
 
 
 DRINK_IDENTIFIERS = {
@@ -73,11 +74,11 @@ coffee_loop = True
 
 while coffee_loop:
     if any(resource < 0 for resource in resources.values()):
-        print("Sorry, there is not enough resources to make another drink.")
+        print("Sorry, there is not enough resources to make another drink.\n")
         coffee_loop = False
         break
 
-    user_input = input("What would you like? (espresso = 'esp' | latte = 'lat' | cappuccino = 'cap' | report | off) ")
+    user_input = input("\nWhat would you like? (espresso = 'esp' | latte = 'lat' | cappuccino = 'cap' | report | off) ")
 
     if user_input in DRINK_IDENTIFIERS:
         process_drink_choice(DRINK_IDENTIFIERS[user_input])
