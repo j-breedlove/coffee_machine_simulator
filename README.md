@@ -18,7 +18,9 @@ This program uses Pipenv for dependency management. Ensure you have both Python 
 ## How to Run
 
 1. Clone this repository or download the files.
+```git clone https://github.com/j-breedlove/coffee_machine_simulator.git```
 2. Navigate to the project directory in your terminal or command prompt.
+```cd coffee_machine_simulator```
 3. Install dependencies using `pipenv install`.
 4. Activate the Pipenv shell with `pipenv shell`.
 5. Run the command `python main.py` to start the program.
